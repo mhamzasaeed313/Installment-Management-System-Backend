@@ -9,8 +9,20 @@ const paymentRoutes = require("./route/payment.route");
 const { verifyToken } = require("./middleware/auth");
 
 app.use(express.json())
+const allowedOrigins = [
+  "https://installment-management-system-xi.vercel.app",
+  "http://localhost:5173"
+];
+
 app.use(cors({
-    origin: "https://installment-management-system-xi.vercel.app"
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
+    credentials: true
 }));
 
 app.use("/auth", authRoutes);
