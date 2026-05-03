@@ -1,5 +1,5 @@
 const express = require('express');
-const {createInstallment , updateInstallment , deleteInstallment , getInstallment } = require('../controller/Installment.controller')
+const {createInstallment , updateInstallment , deleteInstallment , getInstallment } = require('../controller/installment.controller')
 const installmentRoutes = express.Router();
 
 installmentRoutes.get('/',getInstallment);
