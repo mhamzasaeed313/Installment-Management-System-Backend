@@ -10,7 +10,7 @@ const { verifyToken } = require("./middleware/auth");
 
 app.use(express.json())
 const allowedOrigins = [
-  "https://installment-management-system-xi.vercel.app",
+  "https://your-netlify-site.netlify.app",
   "http://localhost:5173"
 ];
 
