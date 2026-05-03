@@ -9,7 +9,9 @@ const paymentRoutes = require("./route/payment.route");
 const { verifyToken } = require("./middleware/auth");
 
 app.use(express.json())
-app.use(cors());
+app.use(cors({
+    origin: "https://installment-management-system-xi.vercel.app"
+}));
 
 app.use("/auth", authRoutes);
 app.use("/api/customer", verifyToken, customerRoutes);
